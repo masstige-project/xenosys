@@ -1,0 +1,91 @@
+
+/*2024년 탭 헤드*/
+.tab-head {
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100%;
+    text-align: center;
+    ul {
+        width: fit-content;
+        display: inline-flex;
+        li {
+            display: inline;
+            button {
+                display: inline;
+                font-size: rem(30);
+                color: $gray-6;
+                text-align: center;
+                white-space: nowrap;
+                letter-spacing: -0.05em;
+                min-width: rem(180);
+                padding: rem(15) rem(40);
+                border-bottom: rem(4) solid #e1e0e0;
+                transition: all 0.3s;
+                &.active {
+                    font-weight: 600;
+                    color: $gray-3;
+                    border-color: $color-1;
+                }
+                @include mdq-min(lg) {
+                    &:hover {
+                        border-color: $color-1;
+                    } 
+                }
+            }
+        }
+    }
+}
+
+.tab-list-wrap {
+    overflow: auto;
+    .tab-con-list {
+        margin: 60px auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            max-width: 240px;
+            width: 100%;
+            button {
+                display: block;
+                width: 100%;
+                color: $gray-6;
+                line-height: 50px;
+                border: 1px solid $gray-c;
+                border-right: none;
+                font-size: 20px;
+                font-weight: 500;
+                transition: all 0.3s;
+                &.on {
+                    color: $white;
+                    background: $color-1;
+                    border-color: $color-1;
+                }
+            }
+            &:last-child {
+                button {
+                    border-right: 1px solid $gray-c;
+                }
+            }
+        }
+        @include mdq-max(lg) {
+            width: max-content;
+            li {
+                max-width: 100%;
+                width: auto;
+                button {
+                    font-size: 18px;
+                    padding: 0 20px;
+                }
+            }
+        }
+        @include mdq-max(md) {
+            li {
+                button {
+                    font-size: 17px;
+                    line-height: 35px;
+                }
+            }
+        }
+    }
+}

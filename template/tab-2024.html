@@ -1,0 +1,104 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '1';
+    $P_dp2 = '1';
+    include "../include/meta.html"
+		?>
+  </head>
+  <body class="sub-body">
+    <!-- S : Header -->
+    <? include "../include/header.html" ?>
+    <!-- E : Header -->
+
+    <!-- S : Sub visual -->
+    <? include "../include/sub-visual.html" ?>
+    <!-- E : Sub visual -->
+
+    <!-- S : Sub navigation -->
+    <? include "../include/sub-nav.html" ?>
+    <!-- E : Sub navigation -->
+
+    <!-- S : Main -->
+    <main class="main py-20" id="contents">
+      <!-- S : Section -->
+      <section class="section mb-15 pb-15">
+        <div class="container">
+           <!-- S : 탭 버튼-->
+           <div class="tab-head">
+              <ul>
+                  <li class="wow fadeInUp">
+                      <button type="button" title="전체" data-mode="">전체</button>
+                  </li>
+                  <li class="wow fadeInUp" data-wow-delay="0.1s">
+                      <button type="button" title="첫번째" data-mode="1">첫번째</button>
+                  </li>
+                  <li class="wow fadeInUp" data-wow-delay="0.2s">
+                      <button type="button" title="두번째" data-mode="2">두번째</button>
+                  </li>
+                  <li class="wow fadeInUp" data-wow-delay="0.3s">
+                      <button type="button" title="세번째" data-mode="3">세번째</button>
+                  </li>
+              </ul>
+          </div>
+        <!-- E : 탭 버튼-->
+        <div class="tab-list-wrap">
+          <ul class="tab-con-list">
+            <li>
+              <button type="button" class="on" data-idx="1">첫번째 컨텐츠</button>
+            </li>
+            <li>
+              <button type="button" data-idx="2">두번째 컨텐츠</button>
+            </li>
+            <li>
+              <button type="button" data-idx="3">세번째 컨텐츠</button>
+            </li>
+        </ul>
+        </div>
+        <div class="tab-con mt-10">
+            <? include "tab-con/tab1.html" ?>
+        </div>
+        </div>
+      </section>
+      <!-- E : Section -->
+    </main>
+    <!-- E : Main -->
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      $(document).ready(function(){
+        const urlParams = new URLSearchParams(window.location.search); //url파라미터
+        let modeIdx = urlParams.get('mode'); // data-mode의 idx 값을 가져옵니다.
+        
+        modeIdx = modeIdx === null || modeIdx === undefined ? 0 : modeIdx; // data-mode의 값이 없을 경우에는 변수값을 0으로 설정합니다.
+
+        console.log(modeIdx)
+        $(".tab-head button").eq(modeIdx).addClass('active'); // 현재 data-mode의 버튼에 active 표시
+
+        $(".tab-head button").on("click", function(){
+            let mode = $(this).data("mode");
+            let currentPath = window.location.pathname;
+            let modeUrl = currentPath; // 현재 파일 이름을 사용
+
+            if(mode){
+                modeUrl += "?mode=" + mode;
+            }
+
+            location.href = modeUrl;
+        });
+
+        //탭 컨텐츠 
+        $('.tab-con-list button').on('click',function(){
+            if($(this).hasClass('on')) return; // 현재 활성화 된 탭을 클릭하면 아무런 동작 X
+            const idx =	$(this).data('idx'); // 클릭한 탭의 번호
+            $('.tab-con-list button').removeClass('on'); //탭 활성화 표시 삭제
+            $(this).addClass('on');//클릭한 탭 활성화 표시
+            $('.tab-con').load(`tab-con/tab${idx}.html`); //클릭한 탭의 컨텐츠 불러오기
+        });
+      })
+    </script>
+  </body>
+</html>

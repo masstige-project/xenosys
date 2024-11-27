@@ -1,0 +1,31 @@
+/*2024년 갤러리 리스트*/
+.board-list {
+    @include gallery-list(10, 30, 3);
+    li {
+        a {
+            .txt-bx {
+                padding: rem(20);
+                .tit {
+                    font-weight: 700;
+                    font-size: rem(24);
+                    @include text-truncate(1);
+                    display: block;
+                    margin-bottom: rem(10);
+                }
+                .txt {
+                    font-weight: 500;
+                    font-size: rem(18);
+                    @include text-truncate(2);
+                    margin-bottom: rem(10);
+                }
+                .date {
+                    font-weight: 300;
+                    color: $gray-6;
+                }
+            }
+        }
+    }
+    @include mdq-max(md) {
+        @include gallery-list(10, 20, 2);
+    }
+}

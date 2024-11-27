@@ -1,0 +1,34 @@
+@mixin gallery-list($colGap, $rowGap, $num) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem($colGap) rem($rowGap);
+    li {
+        width: calc(100% / $num - rem(($rowGap / ($num) * ($num - 1))));
+        border: 2px solid transparent;
+        transition: all 0.3s;
+        a {
+            display: block;
+            .img-wrap {
+                overflow: hidden;
+                .img-bx {
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center center;
+                    transition: all 0.3s;
+                }
+            }
+        }
+        @include mdq-min(lg) {
+            &:hover {
+                border-color: $color-1;
+                a {
+                    .img-wrap {
+                        .img-bx {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
