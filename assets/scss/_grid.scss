@@ -77,3 +77,22 @@
 @if $enable-grid-classes {
   @include make-grid-columns();
 }
+
+.container{ 
+  max-width: 1440px;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+.row{
+  --gutters-margin: -10px;
+  margin-left: var(--gutters-margin);
+  margin-right: var(--gutters-margin);
+}
+.row>[class*=col], 
+.row>*{
+  padding-left: calc(var(--gutters-margin) * -1);
+  padding-right: calc(var(--gutters-margin) * -1)
+}
+.no-gutters{
+  --gutters-margin: 0
+}

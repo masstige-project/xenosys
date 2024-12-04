@@ -1,0 +1,81 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '4';
+    $P_dp2 = '3';
+    include "../include/meta.html" 
+    ?>
+  </head>
+  <body class="sub-body">
+    <? include "../include/header.html" ?>
+
+    <main class="main" id="contents">
+      <!-- S : sub-visual -->
+      <? include "../include/sub-visual.html" ?>
+      <!-- E : sub-visual -->
+
+      <!-- S : sub-contents -->
+      <section class="sub-container wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+          <div class="sub-header" data-aos="fade-down">
+            <h2 class="tit"><?=${nav_.$P_dp1._.$P_dp2}?></h2>
+          </div>
+          <div class="sub-contents schedule">
+            <div id="datepicker" class="datepicker--custom"></div>
+             <!-- [D] 보여질 달력내부 컨텐츠  -->
+            <div class="ui-state-default">
+              2
+              <ul>
+                <li class="dot-red"><p>박람회 진행</p></li>
+                <li class="dot-org"><p>박람회 관련 일정 진행
+                  일산 킨텍스 12B 박람회 관련 일정 진행
+                  일산 킨텍스 12B</p></li>
+                <li class="dot-grn"><p>박람회 진행</p></li>
+                <li class="dot-blue"><p>박람회 진행</p></li>
+                <li class="dot-black"><p>박람회 진행</p></li>            
+              </ul>
+            </div>
+            <a class="btn btn-auto btn-more">More</a>
+            <!-- 클릭 시 활성화 .active -->
+            <div class="schedule_details">
+              <ul>
+                <li class="dot-red"><p>박람회 진행</p></li>
+                <li class="dot-org"><p>박람회 관련 일정 진행
+                  일산 킨텍스 12B 박람회 관련 일정 진행
+                  일산 킨텍스 12B</p></li>
+                <li class="dot-grn"><p>박람회 진행</p></li>
+                <li class="dot-blue"><p>박람회 진행</p></li>
+                <li class="dot-black"><p>박람회 진행</p></li>            
+              </ul>
+            </div>
+            <!-- // [D] 보여질 달력내부 컨텐츠  -->
+          </div>
+        </div>
+      </section>
+      <!-- E : sub-contents -->
+    </main>
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      $('#datepicker').datepicker({
+        inline: true,
+        dateFormat: 'yy-mm-dd',
+        showOtherMonths: true,
+        showMonthAfterYear: true,
+        minDate: '0',
+        maxDate: '+60d',
+        yearSuffix: '.',
+        dayNamesMin: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+        monthNames: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+        // beforeShowDay: ,
+        onSelect: function (dateText, inst) {
+          // 날짜 선택시 필요한 액션을 적어줌
+       
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '2';
+    $P_dp2 = '1';
+    include "../include/meta.html" 
+    ?>
+  </head>
+  <body class="sub-body">
+    <? include "../include/header.html" ?>
+
+    <main class="main" id="contents">
+      <!-- S : sub-visual -->
+      <? include "../include/sub-visual.html" ?>
+      <!-- E : sub-visual -->
+
+      <!-- S : sub-contents -->
+      <section class="sub-container wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+          <div class="sub-header" data-aos="fade-down">
+            <h2 class="tit"><?=${nav_.$P_dp1._.$P_dp2}?></h2>
+          </div>
+          <div class="sub-contents product">
+            <div class="prd-details">
+              <div class="prd-img">
+                <img src="../assets/images/sub/img.jpg" alt="" />
+              </div>
+              <div class="info">
+                <h3 class="tit" data-aos="fade-up"data-aos-delay="100">Surgical Telescope Angle Type Looks7500A</h3>
+                <p class="txt" data-aos="fade-up"data-aos-delay="200">
+                  Angle type deflection loupe will give you upright & ergonomic
+                  posture during your medical treatment or dentail pratices.
+                  This kind of loupe has a higher magnification for longer
+                  working distance with much ligher weight. Looks7500A - 7.5x
+                </p>
+                <a href="#" download class="btn btn-blue"  data-aos="fade-up" data-aos-delay="300"
+                  >Download<i class="icon-download"></i
+                ></a>
+              </div>
+            </div>
+            <div class="prd-contents" data-aos="fade-up">
+              <!-- [D] 웹 에디터 노출 영역 -->
+              웹 에디터 노출 영역
+            </div>
+            <div class="btn-bottom btn-wrp" data-aos="fade-up" data-aos-delay="100">
+              <a href="#" download class="btn">List</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- E : sub-contents -->
+    </main>
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {});
+    </script>
+  </body>
+</html>

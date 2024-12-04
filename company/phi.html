@@ -1,0 +1,77 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '1';
+    $P_dp2 = '3';
+    include "../include/meta.html" 
+    ?>
+  </head>
+  <body class="sub-body">
+    <? include "../include/header.html" ?>
+
+    <main class="main" id="contents">
+      <!-- S : sub-visual -->
+      <? include "../include/sub-visual.html" ?>
+      <!-- E : sub-visual -->
+
+      <!-- S : sub-contents -->
+      <section class="sub-container wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+          <div class="sub-header" data-aos="fade-down">
+            <h2 class="tit"><?=${nav_.$P_dp1._.$P_dp2}?></h2>
+          </div>
+          <div class="sub-contents phi">
+            <div class="columns img-contents flex-md-row" data-aos="fade-in" data-aos-delay="100">
+              <div class="columns-item img-bx normal">
+                <div class="img">
+                  <img src="../assets/images/sub/phi_img_01.png" alt="" data-aos="fade-in" data-aos-delay="100">
+                </div>
+              </div>
+              <div class="columns-item txt-bx">
+                <div class="inner">
+                  <h3 class="tit" data-aos="fade-in" data-aos="fade-up" data-aos-delay="100">Warm Greetings,</h3>
+                  <p class="txt" data-aos="fade-up" data-aos-delay="200">The technical staff of Xenosys has accumulated 
+                    35 years of expertise in developing a wide range of optical 
+                    technologies, including equipment designed for military 
+                    defense applications.
+                    <br>
+                    <br>
+                    Building on this technological know-how, 
+                    Xenosys has been committed to developing innovative 
+                    products, including high-quality surgical telescopes, LED 
+                    headlight systems, and wearable cameras since 2000.
+                </div>
+              </div>
+            </div>
+            <div class="txt-bx">
+              <p class="txt" data-aos="fade-up" data-aos-delay="200">
+                Xenosys prioritizes human-centered design and diligent quality control, ensuring that the products meet the stringent standards of 
+                ‘MIL-STD-147’ (Human Engineering Design Criteria for Military Systems, Equipment and Facilities).
+                <br>
+                <br>
+                Our ultimate goal is to deliver convenience to our customers by providing products that offer exceptional vision, combined with durable and lightweight design, along with careful after-sales service in order to achieve and exceed customers' expectations.
+                <br><br>
+                We are sincerely grateful for your continued support and trust in Xenosys products.
+                We will always value the customers' feedback and strive to do our best.
+                <br><br>
+                Xenosys Co., Ltd.
+              </p>
+              <p class="txt name" data-aos="fade-up" data-aos-delay="300">
+                CEO Hadeuk Lee
+              </p>
+          </div>
+          </div>
+        </div>
+      </section>
+      <!-- E : sub-contents -->
+    </main>
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {});
+    </script>
+  </body>
+</html>

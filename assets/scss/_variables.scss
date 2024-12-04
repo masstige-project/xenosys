@@ -23,28 +23,28 @@ $white: #fff !default;
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
-	(
-		'gray-0': $black,
-		'gray-1': $gray-1,
-		'gray-2': $gray-2,
-		'gray-3': $gray-3,
-		'gray-4': $gray-4,
-		'gray-5': $gray-5,
-		'gray-6': $gray-6,
-		'gray-7': $gray-7,
-		'gray-8': $gray-8,
-		'gray-9': $gray-9,
-		'gray-a': $gray-a,
-		'gray-b': $gray-b,
-		'gray-c': $gray-c,
-		'gray-d': $gray-d,
-		'gray-e': $gray-e,
-		'gray-f': $white,
-	),
-	$grays
+  (
+    "gray-0": $black,
+    "gray-1": $gray-1,
+    "gray-2": $gray-2,
+    "gray-3": $gray-3,
+    "gray-4": $gray-4,
+    "gray-5": $gray-5,
+    "gray-6": $gray-6,
+    "gray-7": $gray-7,
+    "gray-8": $gray-8,
+    "gray-9": $gray-9,
+    "gray-a": $gray-a,
+    "gray-b": $gray-b,
+    "gray-c": $gray-c,
+    "gray-d": $gray-d,
+    "gray-e": $gray-e,
+    "gray-f": $white,
+  ),
+  $grays
 );
 
-$blue: #007bff !default;
+$blue: #3e42d1 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
@@ -53,27 +53,27 @@ $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #5cb85c !default;
 $teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+$cyan: #3cdcff !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
-	(
-		'blue': $blue,
-		'indigo': $indigo,
-		'purple': $purple,
-		'pink': $pink,
-		'red': $red,
-		'orange': $orange,
-		'yellow': $yellow,
-		'green': $green,
-		'teal': $teal,
-		'cyan': $cyan,
-		'white': $white,
-		'gray': $gray-6,
-		'gray-dark': $gray-8,
-	),
-	$colors
+  (
+    "blue": $blue,
+    "indigo": $indigo,
+    "purple": $purple,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": $white,
+    "gray": $gray-6,
+    "gray-dark": $gray-8,
+  ),
+  $colors
 );
 
 $color-1: $blue;
@@ -88,18 +88,18 @@ $dark: $gray-6 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge(
-	(
-		'color-1': $color-1,
-		'color-2': $color-2,
-		'color-3': $color-3,
-		'success': $success,
-		'info': $info,
-		'warning': $warning,
-		'danger': $danger,
-		'light': $light,
-		'dark': $dark,
-	),
-	$theme-colors
+  (
+    "color-1": $color-1,
+    "color-2": $color-2,
+    "color-3": $color-3,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+  ),
+  $theme-colors
 );
 
 // Spacing
@@ -111,7 +111,7 @@ $spacerUnit: 4;
 $spacerMax: 40;
 $spacers: () !default;
 @for $i from 0 through $spacerMax {
-	$spacers: map-merge((#{$i}: $spacer * ($i/$spacerUnit)), $spacers);
+  $spacers: map-merge((#{$i}: $spacer * ($i/$spacerUnit)), $spacers);
 }
 
 // Sizes
@@ -122,15 +122,15 @@ $sizeMax: 100;
 $sizes: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 @for $i from 0 through $sizeMax {
-	$sizes: map-merge((#{$i}: $i * 1%), $sizes);
+  $sizes: map-merge((#{$i}: $i * 1%), $sizes);
 }
 
 // Body colors
 $body-bg: $white !default;
-$body-color: $gray-1 !default;
+$body-color: $gray-3 !default;
 
 // Links
-$link-color: theme-color('color-1') !default;
+$link-color: theme-color("color-1") !default;
 $link-decoration: none !default;
 $link-hover-color: darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
@@ -139,29 +139,29 @@ $emphasized-link-hover-darken-percentage: 0 !default;
 
 // Font Size breakpoints
 $font-size-breakpoints: (
-	xxxs: 13px,
-	sm: 14px,
-	md: 15px,
-	lg: 16px,
+  xxxs: 13px,
+  sm: 14px,
+  md: 15px,
+  lg: 16px,
 
-	// 반응형일 경우 xxxs: 16px 하나만 삽입.
+  // 반응형일 경우 xxxs: 16px 하나만 삽입.
 ) !default;
 
 // Grid breakpoints
 $grid-breakpoints: (
-	xxxs: 0,
-	xxs: 320px,
-	xs: 375px,
-	sm: 576px,
-	md: 768px,
-	lg: 1024px,
-	xl: 1200px,
-	xxl: 1400px,
-	xxxl: 1600px,
+  xxxs: 0,
+  xxs: 320px,
+  xs: 375px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
 ) !default;
 
-@include _assert-ascending($grid-breakpoints, '$grid-breakpoints');
-@include _assert-starts-at-zero($grid-breakpoints, '$grid-breakpoints');
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 // Grid containers
 //
@@ -169,14 +169,14 @@ $grid-breakpoints: (
 
 $container-gutter-width: 40px;
 $container-max-widths: (
-	xxxs: 1400px + $container-gutter-width,
-	// xs: 576px,
-	// sm: 768px,
-	// md: 1024px,
-	// lg: 1200px,,,,,,,,
+  xxxs: 1400px + $container-gutter-width,
+  // xs: 576px,
+  // sm: 768px,
+  // md: 1024px,
+  // lg: 1200px,,,,,,,,,
 ) !default;
 
-@include _assert-ascending($container-max-widths, '$container-max-widths');
+@include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Options
 $enable-gradients: true !default;
@@ -193,18 +193,25 @@ $rounded-pill: 50rem !default;
 
 $embed-responsive-aspect-ratios: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$embed-responsive-aspect-ratios: join(((21 9), (16 9), (4 3), (1 1)), $embed-responsive-aspect-ratios);
+$embed-responsive-aspect-ratios: join(
+  ((21 9), (16 9), (4 3), (1 1)),
+  $embed-responsive-aspect-ratios
+);
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: 'SUIT', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
-$font-family-serif: -apple-system, BlinkMacSystemFont, 'Times New Roman', 'Palatino Linotype', 'Book Antiqua', Georgia, Times, Palatino, serif !default;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+$font-family-sans-serif: "TheJamsil", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-serif: -apple-system, BlinkMacSystemFont, "Times New Roman",
+  "Palatino Linotype", "Book Antiqua", Georgia, Times, Palatino, serif !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
 $font-family-main: $font-family-sans-serif !default;
-$font-family-sub: 'Montserrat', 'SUIT', $font-family-serif !default;
+$font-family-sub: "TheJamsil", $font-family-serif !default;
 // stylelint-enable value-keyword-case
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
@@ -231,12 +238,12 @@ $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
 $heading-sizes: (
-	h1: $h1-font-size,
-	h2: $h2-font-size,
-	h3: $h3-font-size,
-	h4: $h4-font-size,
-	h5: $h5-font-size,
-	h6: $h6-font-size,
+  h1: $h1-font-size,
+  h2: $h2-font-size,
+  h3: $h3-font-size,
+  h4: $h4-font-size,
+  h5: $h5-font-size,
+  h6: $h6-font-size,
 ) !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
@@ -293,7 +300,9 @@ $zindex-popover: 1060 !default;
 $zindex-tooltip: 1070 !default;
 
 // Utilities
-$displays: none, inline, inline-block, block, table, table-caption, table-column, table-column-group, table-header-group, table-footer-group, table-row-group, table-row, table-cell, flex, inline-flex !default;
+$displays: none, inline, inline-block, block, table, table-caption, table-column,
+  table-column-group, table-header-group, table-footer-group, table-row-group,
+  table-row, table-cell, flex, inline-flex !default;
 $overflows: auto, hidden !default;
 $positions: static, relative, absolute, fixed, sticky !default;
 $user-selects: all, auto, none !default;
@@ -351,7 +360,10 @@ $modal-content-bg: $white !default;
 $modal-content-border-color: rgba($black, 0.2) !default;
 $modal-content-border-width: $border-width !default;
 $modal-content-border-radius: $border-radius-lg !default;
-$modal-content-inner-border-radius: subtract($modal-content-border-radius, $modal-content-border-width) !default;
+$modal-content-inner-border-radius: subtract(
+  $modal-content-border-radius,
+  $modal-content-border-width
+) !default;
 $modal-content-box-shadow-xs: 0 0.25rem 0.5rem rgba($black, 0.5) !default;
 $modal-content-box-shadow-sm-up: 0 0.5rem 1rem rgba($black, 0.5) !default;
 

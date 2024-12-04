@@ -1,0 +1,100 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '1';
+    $P_dp2 = '2';
+    include "../include/meta.html" 
+    ?>
+  </head>
+  <body class="sub-body">
+    <? include "../include/header.html" ?>
+
+    <main class="main" id="contents">
+      <!-- S : sub-visual -->
+      <? include "../include/sub-visual.html" ?>
+      <!-- E : sub-visual -->
+
+      <!-- S : sub-contents -->
+      <section class="sub-container wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+          <div class="sub-header" data-aos="fade-down">
+            <h2 class="tit"><?=${nav_.$P_dp1._.$P_dp2}?></h2>
+          </div>
+          <div class="sub-contents intro">
+            <div class="columns intro-columns-01 img-contents" data-aos="fade-in" data-aos-delay="100">
+              <div class="columns-item img-bx normal">
+                <div class="img">
+                  <img src="../assets/images/sub/introduction_img_01_1.png" alt="" data-aos="fade-in" data-aos-delay="100">
+                  <img src="../assets/images/sub/introduction_img_01_2.png" alt="" data-aos="fade-left" >
+                </div>
+              </div>
+              <div class="columns-item txt-bx" data-aos="fade-up">
+                <div class="inner">
+                  <strong data-aos="fade-in">Xenosys is</strong>
+                  <p data-aos="fade-up">stablished to develop and supply fine <br class="d-none d-xl-block">
+                  products by adapting accumulated <br class="d-none d-xl-block">
+                  high optical technology from national defense <br class="d-none d-xl-block">
+                  industry to medical optics industry.</p>
+                </div>
+              </div>
+            </div>
+            <div class="columns intro-columns-02 img-contents"  data-aos="fade-in" data-aos-delay="100">
+              <div class="columns-item img-bx border-round">
+                <div class="img">
+                  <img src="../assets/images/sub/introduction_img_02.png" alt="">
+                </div>
+              </div>
+              <div class="columns-item txt-bx" data-aos="fade-up">
+                <div class="inner">
+                  <p data-aos="fade-up">Our technology has been acknowledged by MCIE 
+                    (Ministry of Commerce, Industry and Energy) and 
+                    SMBA (Small and Medium Business Administration).</p><br>
+                    <p data-aos="fade-up">We are cooperating with Seoul National University,
+                      Incheon National University, 
+                    and DATQ (Defense 
+                    Agency for Technology and Quality) to develop
+                      innovative products, secure credence, and to evaluate 
+                    and improve the quality of the products.</p>
+                    <br>
+                    <br>
+                    <p data-aos="fade-up">Also, we have obtained CE, ISO14001, FDA, Japan FDA 
+                      and GMP (Good Manufacturing Practice) from KFDA 
+                      (Korea Food and Drug Administration),
+                      SFDA for China 
+                      that are required for the manufacturing and the 
+                      marketing of the products.</p>
+                </div>
+              </div>
+            </div>
+            <div class="columns intro-columns-03 img-contents"  data-aos="fade-in" data-aos-delay="100">
+              <div class="columns-item img-bx border-round">
+                <div class="img">
+                  <img src="../assets/images/sub/introduction_img_03.png" alt="">
+                </div>
+              </div>
+              <div class="columns-item txt-bx" data-aos="fade-up">
+                <div class="inner">
+                  <p data-aos="fade-up">We are very proud of our product quality and confidently 
+                    introduce you to our product line. </p><br>
+                    <p data-aos="fade-up"> Our loupes and LED light systems are selling to all over 
+                    the world and 
+                    getting more favorable satisfaction from 
+                    our valuable customers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- E : sub-contents -->
+    </main>
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {});
+    </script>
+  </body>
+</html>

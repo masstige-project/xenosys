@@ -1,5 +1,18 @@
-<div class="sub-visual" style="background-image: url(../assets/images/sub/visual_<?=$P_dp1?>.jpg)">
+<div class="sub-visual">
+	<div class="sub-bg">
+		<div class="bg" style="background-image: url(../assets/images/sub/visual_<?=$P_dp1?>.jpg);"></div>
+	</div>
 	<div class="sub-visual__wrapper container">
-		<h1 class="sub-visual__title"><?=${nav_.$P_dp1}?></h1>
+		<div class="inner">
+			<h1 class="sub-visual__title wow fadeInUp"><?=${nav_.$P_dp1}?></h1>
+			<p class="sub-visual__txt wow fadeInUp" data-wow-delay="0.2s"><span>Experience a convergence of creativity and technology where you can control <br>the technology and determine the outcomes.</span></p>
+			<? include "../include/sub-nav.html" ?>
+			<div class="icon-scroll-down wow fadeIn"  data-wow-delay="0.25s">
+				<div class="mousey">
+					<div class="scroller"></div>
+				</div>
+				<span>SCROLL</span>
+			</div>
+		</div>
 	</div>
 </div>

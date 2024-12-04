@@ -5,28 +5,102 @@
 </ul>
 
 <header id="header" class="header">
-	<div class="container header-wrap">
-		<a href="../main/main.html" class="logo d-inline-flex align-items-center h-100" title="메인으로">
-			<img src="../assets/images/main/logo.png" alt="<?=$SS[sitename]?>" />
-		</a>
-		<div class="nav__bg"></div>
-		<!-- S : navigation -->
-		<nav class="nav">
-			<? include "../include/nav.html" ?>
-		</nav>
-		<!-- E : navigation -->
-		<button class="nav-mobile__btn" type="button">
-			<i class="xi-bars"></i>
-		</button>
+	<div class="container">
+		<div class="inner-header">
+			<a href="../main/main.html" class="logo" title="메인으로">
+				<img class="white" src="../assets/images/common/logo.png" alt="<?=$SS[sitename]?>" />
+				<img class="color" src="../assets/images/common/logo_color.png" alt="<?=$SS[sitename]?>" />
+			</a>
+			<div id="gnb">
+				<div class="inner">
+					<!-- S : navigation -->
+					<nav class="nav">
+						<? include "../include/nav.html" ?>
+					</nav>
+					<!-- E : navigation -->
+				</div>
+				<div class="header-depth2"></div>
+			</div>
+			<div class="dimmed"></div>
+			<!-- S : 사이트맵-->
+			<div class="sitemap">
+				<div class="container">
+					<div class="inner">
+						<a href="../main/main.html" class="logo">
+							<img src="../assets/images/common/sitemap_logo.svg" alt="<?=$SS[sitename]?>" />
+						</a>
+						<div id="menu"></div>
+					</div>
+				</div>
+			</div>
+			<!-- E : 사이트맵-->
+			<!-- S : 사이트맵 버튼-->
+			<button type="button" class="sitemap-btn">
+				<span class="line">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+			<!-- S : mobile navigation -->
+			<? include "../include/aside.html" ?>
+			<!-- E : mobile navigation -->
+			<!-- E : 사이트맵 버튼-->
+			<button class="nav-mobile__btn ham-btn" type="button">
+				<span class="line">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+			</button>
+		</div>
 	</div>
 </header>
-
-<!-- S : mobile navigation -->
-<? include "../include/aside.html" ?>
-<!-- E : mobile navigation -->
 
 <!-- S : loading image -->
 <div class="loading-image">
 	<img src="../assets/images/icon/loading.svg" alt="loading" />
 </div>
 <!-- E : loading image -->
+<script>
+	$(document).ready(function(){
+		/*gnb 2depth 리스트 clone*/
+		setTimeout(function(){
+			$('.header .nav .nav-list--depth2').each(function() {
+				var clonedList = $(this).clone();
+				$('.header-depth2').append(clonedList);
+			});
+			
+			$('#menu').append($('.header .nav').clone());
+		},100);
+
+		/*gnb 2depth 마우스 오버 시 해당 메뉴의 depth활성화*/
+		$('.header .nav .depth-1').on('mouseover',function(){
+			var idx = $(this).index();
+			$('.header-depth2 ul').eq(idx).addClass('active').siblings().removeClass('active');
+		});
+
+		/*사이트 맵*/
+		function sitemapToggle(isOpen) {
+			$('.sitemap').toggleClass('active', isOpen);
+			$('body').toggleClass('sitemap-open', isOpen);
+		}
+
+		$('.sitemap-btn').on('click', function () {
+			if(!$(this).hasClass('active')){
+				$(this).addClass('active');
+				sitemapToggle(true);
+			} else {
+				$(this).removeClass('active');
+				sitemapToggle(false);
+			}
+		});
+
+		// esc 키 눌렀을 때 active 상태를 해제
+		$(document).on('keydown', function (e) {
+			if (e.key === 'Escape' && $('.sitemap').hasClass('active')) {
+				sitemapToggle(false);
+			}
+		});
+	});
+</script>

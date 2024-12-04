@@ -1,0 +1,158 @@
+<? include "../include/head.html" ?>
+<!DOCTYPE html>
+<html lang="<?=$P_lang?>">
+  <head>
+    <?
+    $P_dp1 = '4';
+    $P_dp2 = '4';
+    include "../include/meta.html" 
+    ?>
+  </head>
+  <body class="sub-body">
+    <? include "../include/header.html" ?>
+
+    <main class="main" id="contents">
+      <!-- S : sub-visual -->
+      <? include "../include/sub-visual.html" ?>
+      <!-- E : sub-visual -->
+
+      <!-- S : sub-contents -->
+      <section class="sub-container wow fadeInUp" data-wow-delay="0.3s">
+        <div class="container">
+          <div class="sub-header" data-aos="fade-down">
+            <h2 class="tit"><?=${nav_.$P_dp1._.$P_dp2}?></h2>
+          </div>
+          <div class="sub-contents material">
+            <!-- S : 검색영역 -->
+            <div class="board-search-02">
+              <form method="POST" action="?" id="searchForm">
+                <fieldset>
+                  <legend class="hidden">검색</legend>
+                  <select
+                    name="find_field"
+                    title="search"
+                    class="select-type-01"
+                  >
+                    <option value="전체">ALL</option>
+                  </select>
+                  <input
+                    type="text"
+                    title="검색어"
+                    class="input-type-01"
+                    name="find_word"
+                    value=""
+                    placeholder="검색어를 입력해주세요"
+                  />
+                  <input type="submit" value="검색" class="btn-color-01" />
+                </fieldset>
+              </form>
+            </div>
+            <!-- E : 검색영역 -->
+
+            <!-- S : 목록 -->
+            <table class="table_board_for type_a">
+              <caption>
+                <span class="hidden">참고 자료 게시판 입니다.</span>
+              </caption>
+              <colgroup>
+                <col width="15%" />
+                <col width="*%;" />
+                <col width="15%;" />
+                <col width="15%;" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Date</th>
+                </tr>
+              </thead>
+              <!-- end 상단 출력인 경우 사용  -->
+              <tbody>
+                <!-- S : 등록된 게시물이 없는 경우 노출 -->
+                <tr>
+                  <td class="no_data" colspan="4">No Posts Yet</td>
+                </tr>
+                <!-- E : 등록된 게시물이 없는 경우 노출 -->
+                <tr class="notice__fix">
+                  <td>10</td>
+                  <td class="text_left">
+                    <a href="notice__view.html">
+                      We are very proud of our product quality and confidently
+                      introduce.
+                    </a>
+                  </td>
+                  <td>Admin</td>
+                  <td>2014-09-03</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="text_left">
+                    <a href="javascript:;">
+                      We are very proud of our product quality and confidently
+                      introduce.
+                    </a>
+                  </td>
+                  <td>Admin</td>
+                  <td>2014-09-03</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="text_left">
+                    <a href="javascript:;">
+                      We are very proud of our product quality and confidently
+                      introduce.
+                    </a>
+                  </td>
+                  <td>Admin</td>
+                  <td>2014-09-03</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- E : 목록 -->
+
+            <!-- S : 페이징 -->
+            <div class="paging-area">
+              <ul>
+                <li>
+                  <a href="javascript:;" class="prev-first"
+                    ><span>맨앞으로</span></a
+                  >
+                </li>
+                <li>
+                  <a href="javascript:;" class="prev"><span>이전으로</span></a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="active">1<span></span></a>
+                </li>
+                <li>
+                  <a href="javascript:;">2<span></span></a>
+                </li>
+                <li>
+                  <a href="javascript:;">3<span></span></a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="next"><span>다음으로</span></a>
+                </li>
+                <li>
+                  <a href="javascript:;" class="next-last"
+                    ><span>맨뒤로</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- E : 페이징 -->
+          </div>
+        </div>
+      </section>
+      <!-- E : sub-contents -->
+    </main>
+
+    <? include "../include/footer.html" ?>
+    <? include "../include/js.html" ?>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {});
+    </script>
+  </body>
+</html>
