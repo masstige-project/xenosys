@@ -579,7 +579,7 @@
   padding-top: 60px;
 
   .img-bx {
-    .inner{
+    .inner {
       height: auto;
     }
 
@@ -1245,9 +1245,219 @@
   }
 }
 
+.calendar_wrap {
+  .control_bx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(36);
+    margin-bottom: rem(80);
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(50);
+      height: rem(50);
+      transition: all 0.3s;
+
+      &.btn_prev_month {
+        transform: scale(-1, 1);
+      }
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: rem(40);
+      font-weight: 500;
+      line-height: 1;
+      .year {
+        display: inline-block;
+        margin-right: rem(10);
+      }
+      .month {
+        display: inline-block;
+      }
+    }
+
+    @include mdq-max(md) {
+      gap: 15px;
+      margin-bottom: 36px;
+
+      a {
+        img {
+          width: 12px;
+        }
+      }
+
+      .date {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .row-scrollwrap {
+    &__txt {
+      text-align: left;
+      display: none;
+      color: #888;
+      margin-bottom: rem(10);
+      line-height: 1.3;
+      font-size: 1em;
+      letter-spacing: letterSpacing(-30);
+    }
+    &__scroll {
+      overflow-x: auto;
+      position: relative;
+      margin-right: -20px;
+      padding-right: 20px;
+    }
+    &__content {
+      min-width: 1024px;
+    }
+
+    .date-bx {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .schedule-bx {
+      margin: 10px 0;
+
+      ul {
+        overflow: hidden;
+
+        & > li {
+          @include text-truncate(2);
+          max-height: 3em;
+          height: auto;
+
+          &:nth-child(1n + 4) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    ul {
+      font-size: 15px;
+      font-weight: 300;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        padding-left: 24px;
+        line-height: 1.3;
+
+        & + * {
+          margin-top: 10px;
+        }
+
+        a {
+          $color_red: (red, #ff0000);
+          $color_org: (org, #ffc700);
+          $color_grn: (grn, #1cc900);
+          $color_blue: (blue, #3e42d1);
+          $color_black: (black, #111);
+
+          @each $color_, $color_code in $color_red, $color_org, $color_grn,
+            $color_blue, $color_black
+          {
+            &.dot-#{$color_}:before {
+              background-color: #{$color_code};
+            }
+          }
+          pointer-events: none;
+
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0.15em;
+            left: 0;
+            width: 1em;
+            height: 1em;
+            background-color: $black;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+
+    .btn-more {
+      margin-left: 24px;
+      padding: 4px 16px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      border-radius: 5px;
+      pointer-events: auto;
+      text-decoration: none;
+
+      &.active {
+        & + .schedule_details {
+          display: block;
+        }
+      }
+    }
+
+    .schedule_details {
+      display: none;
+      position: absolute;
+      z-index: 1;
+      left: calc(100% - 10px);
+      top: 30%;
+      width: 260px;
+      background-color: $white;
+      padding: 28px 31px;
+      border-radius: 20px;
+      border: 1px solid $gray-1;
+      color: $gray-3;
+      text-align: left;
+
+      ul {
+        height: auto;
+        margin: 0;
+      }
+    }
+
+    @include mdq-max(md) {
+      .date-bx {
+        font-size: 12px;
+      }
+
+      .schedule-bx {
+        margin: 8px 0;
+      }
+
+      ul {
+        font-size: 13px;
+
+        li + * {
+          margin-top: 7px;
+        }
+      }
+
+      .btn-more {
+        padding: 4px 16px;
+        font-size: 12px;
+      }
+
+      .schedule_details {
+        width: 200px;
+        padding: 20px;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
 // troubleshooting
 .faq {
-  .columns-item{
+  .columns-item {
     width: 100%;
   }
   @include mdq-min(md) {

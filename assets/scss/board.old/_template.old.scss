@@ -70,26 +70,26 @@ $input-border-active-width: 3px;
   text-align: left;
   border-collapse: collapse;
   border-spacing: 0;
-  border-top: 1px solid #000;
+  border: 1px solid #dcdcdc;
+  border-width: 0 1px 0 1px;
   word-break: break-all;
 
   thead th {
-    color: #222;
-    padding: 8px 0;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #ecebeb;
     text-align: center;
-    border: 1px solid #ddd;
-    border-bottom: 0;
-    background: #f8f8f8;
-    font-weight: bold;
-
-    @include mdq-max(sm) {
-      font-size: 13px;
-    }
+    padding: 1.375em 0.625rem;
+    line-height: 1;
   }
 
   tr {
     td,
     th {
+      &:not(:last-child){
+        border-right: 1px solid #dcdcdc;
+      }
+
       &:nth-child(1) {
         &,
         .date {
@@ -100,7 +100,7 @@ $input-border-active-width: 3px;
       &:nth-child(7) {
         &,
         .date {
-          color: $blue;
+          color: $color-1;
         }
       }
     }
@@ -111,17 +111,12 @@ $input-border-active-width: 3px;
 
     td {
       position: relative;
-      width: 14.258%;
-      font-weight: normal;
-      padding: 5px 5px;
-      height: 140px;
-
-      @include mdq-max(lg) {
-        height: 14vw;
-      }
-
+      width: 14.285%;
+      height: 201px;
+      padding: 1.25em;
+      border-bottom: 1px solid #ddd;
+      font-weight: 400;
       vertical-align: top;
-      border: 1px solid #ccc;
 
       .date {
         display: block;
@@ -133,7 +128,7 @@ $input-border-active-width: 3px;
         }
 
         &.blue {
-          color: $blue;
+          color: #117EFF;
         }
       }
 
@@ -154,11 +149,29 @@ $input-border-active-width: 3px;
         cursor: default;
       }
 
+      &.empty {
+        background-color: #FBFBFB;
+      }
+
       @include mdq-max(sm) {
         .meal_list li,
         .kcal_t {
           font-size: 10px;
         }
+      }
+    }
+  }
+
+  
+  @include mdq-max(md) {
+    
+    thead th {
+      font-size: 13px;
+    }
+
+    tbody {
+      td{
+        height: 140px;
       }
     }
   }
