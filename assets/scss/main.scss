@@ -175,17 +175,21 @@
     height:calc(var(--vh, 1vh) * 200 * var(--prd) + 100vh);
     background-image: url(../images/main/bg2.jpg);
     background-size: cover;
+    max-width: 1920px;
 
     .inner {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      height: calc(var(--vh, 1vh) * 100);
-      overflow: hidden;
+      width: 100%;
+      height: calc(var(--vh, 1vh)* 100);
+      padding-top: calc(var(--vh, 1vh)* 18);
     }
 
     .txt-wrp {
-        padding-top: calc(var(--vh, 1vh)* 25);
+        padding-left: calc((100% - 1640px) / 2);
+        padding-right: var(--container-padding);
+        overflow: hidden;
+        @include mdq-max(1640){
+          padding-left: var(--container-padding);
+        }
 
       .tit {
         font-size: rem(72);
@@ -195,6 +199,29 @@
         margin-top: rem(29);
         font-size: rem(18);
         font-weight: 300;
+      }
+    }
+    .slide-area{
+      display: flex;
+      @include mdq-max(xl){
+        flex-direction: column;
+        gap: 60px;
+      }
+      > div{
+        flex: 1;
+        @include mdq-max(xl){
+          flex: unset;
+          width: 100%;
+        }
+      }
+      .swiper-container{
+        overflow: visible;
+        max-width: 600px;
+        margin-left: inherit;
+        position: relative;
+      }
+      .swiper-wrapper{
+        height: auto;
       }
     }
 
@@ -277,32 +304,22 @@
           font-weight: 300;
         }
       }
+      &-slide-wrap{
+        position: relative;
+      }
+      &-slide-bx{
+        overflow: hidden;
+        position: relative;
+        @include mdq-max(xl){
+          padding-left: var(--container-padding);
+        }
+      }
 
       &-list {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: calc(var(--vh, 1vh) * 100);
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-         padding: 0 10vw;
-        -webkit-transform: translateX(calc(100% + 100vw));
-        transform: translateX(calc(100% + 100vw));
 
         & > li {
-          -ms-flex-preferred-size: 56%;
-          flex-basis: 56%;
-          -ms-flex-negative: 0;
-          flex-shrink: 0;
-          padding: 0 rem(30);
-          max-width: 700px;
+
         }
       }
     }
@@ -517,8 +534,7 @@
         transform: translateX(calc(100% + 300vw));
 
         &>li{
-          flex-basis: 90vw;
-          padding: 0 24px;
+          
         }
       }
       .prd-link .img{

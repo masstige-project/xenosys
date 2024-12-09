@@ -154,15 +154,22 @@
   height: calc(var(--vh, 1vh) * 200 * var(--prd) + 100vh);
   background-image: url(../images/main/bg2.jpg);
   background-size: cover;
+  max-width: 1920px;
 }
 .main-section.product .inner {
-  position: sticky;
-  top: 0;
+  width: 100%;
   height: calc(var(--vh, 1vh) * 100);
-  overflow: hidden;
+  padding-top: calc(var(--vh, 1vh) * 18);
 }
 .main-section.product .txt-wrp {
-  padding-top: calc(var(--vh, 1vh) * 25);
+  padding-left: calc((100% - 1640px) / 2);
+  padding-right: var(--container-padding);
+  overflow: hidden;
+}
+@media all and (max-width: 1640px) {
+  .main-section.product .txt-wrp {
+    padding-left: var(--container-padding);
+  }
 }
 .main-section.product .txt-wrp .tit {
   font-size: 4.5rem;
@@ -171,6 +178,33 @@
   margin-top: 1.8125rem;
   font-size: 1.125rem;
   font-weight: 300;
+}
+.main-section.product .slide-area {
+  display: flex;
+}
+@media all and (max-width: 1200px) {
+  .main-section.product .slide-area {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
+.main-section.product .slide-area > div {
+  flex: 1;
+}
+@media all and (max-width: 1200px) {
+  .main-section.product .slide-area > div {
+    flex: unset;
+    width: 100%;
+  }
+}
+.main-section.product .slide-area .swiper-container {
+  overflow: visible;
+  max-width: 600px;
+  margin-left: inherit;
+  position: relative;
+}
+.main-section.product .slide-area .swiper-wrapper {
+  height: auto;
 }
 .main-section.product .prd-link {
   display: block;
@@ -233,22 +267,20 @@
   font-size: 1.125rem;
   font-weight: 300;
 }
-.main-section.product .prd-list {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: calc(var(--vh, 1vh) * 100);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 10vw;
-  transform: translateX(calc(100% + 100vw));
+.main-section.product .prd-slide-wrap {
+  position: relative;
 }
-.main-section.product .prd-list > li {
-  flex-basis: 56%;
-  flex-shrink: 0;
-  padding: 0 1.875rem;
-  max-width: 700px;
+.main-section.product .prd-slide-bx {
+  overflow: hidden;
+  position: relative;
+}
+@media all and (max-width: 1200px) {
+  .main-section.product .prd-slide-bx {
+    padding-left: var(--container-padding);
+  }
+}
+.main-section.product .prd-list {
+  display: flex;
 }
 .main-section.contact {
   position: relative;
@@ -422,10 +454,6 @@
   }
   .main-section.product .prd-list {
     transform: translateX(calc(100% + 300vw));
-  }
-  .main-section.product .prd-list > li {
-    flex-basis: 90vw;
-    padding: 0 24px;
   }
   .main-section.product .prd-link .img {
     border-radius: 70px 0 70px 0;

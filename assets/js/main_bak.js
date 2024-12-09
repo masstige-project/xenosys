@@ -156,6 +156,17 @@ $(function () {
       .setTween("#msVisual #prd3 img", {opacity: 1,transform: "translateY(-50%",})
       .addTo(controller);
 
+    var prdList = $(".prd-list").children().length;
+    document.querySelector("#msProduct").style.setProperty("--prd", prdList);
+
+    new ScrollMagic.Scene({
+      triggerElement: "#msProductTrigger",
+      triggerHook: 0,
+      duration: vh * prdList * 2,
+    })
+      .setTween(".prd-list", { transform: "translateX(0)" })
+      .addTo(controller);
+
     new ScrollMagic.Scene({
       triggerElement: "#msContactTrigger",
       triggerHook: 0.8,
@@ -202,37 +213,3 @@ $(function () {
     }
   );
 });
-
-//241209 추가
-$(function () {
-  var productSlide = new Swiper(".main-section.product .swiper-container", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1.2,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      1024: {
-        slidesPerView: 1,
-        spaceBetween: 40,
-      },
-      1400: {
-        slidesPerView: 1,
-        spaceBetween: 60,
-      },
-    },
-  });
-});
-
-
-
