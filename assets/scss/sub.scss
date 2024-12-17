@@ -1358,29 +1358,30 @@
         }
 
         a {
-          $color_red: (red, #ff0000);
-          $color_org: (org, #ffc700);
-          $color_grn: (grn, #1cc900);
-          $color_blue: (blue, #3e42d1);
-          $color_black: (black, #111);
-
-          @each $color_, $color_code in $color_red, $color_org, $color_grn,
-            $color_blue, $color_black
-          {
-            &.dot-#{$color_}:before {
-              background-color: #{$color_code};
-            }
-          }
           pointer-events: none;
 
-          &:before {
-            content: "";
+          &:hover{
+            text-decoration: none !important;
+          }
+
+          // &:before {
+          //   content: "";
+          //   position: absolute;
+          //   top: 0.15em;
+          //   left: 0;
+          //   width: 1em;
+          //   height: 1em;
+          //   background-color: $black;
+          //   border-radius: 50%;
+          // }
+
+          i{
             position: absolute;
-            top: 0.15em;
+            top: .15em;
             left: 0;
             width: 1em;
             height: 1em;
-            background-color: $black;
+            background: #111111;
             border-radius: 50%;
           }
         }

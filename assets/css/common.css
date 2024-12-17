@@ -41759,7 +41759,7 @@ html {
   transition: transform 0.4s 0.1s cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-@media all and (min-width: 1400.02px) {
+@media all and (min-width: 1200.02px) {
   .header .inner-header > .logo {
     padding-bottom: 1rem;
   }

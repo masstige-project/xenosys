@@ -161,7 +161,7 @@ $header-fix: true; //true: 헤더가 상단 고정일 경우입니다.
   
 }
 
-@include mdq-min(xxl) {
+@include mdq-min(xl) {
   .header .inner-header > .logo{
     padding-bottom:1rem
   }
