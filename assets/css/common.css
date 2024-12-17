@@ -43426,8 +43426,9 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
 }
 
 .modal-title {
+  align-self: center;
   margin-bottom: 0;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 .modal-body {
@@ -49476,12 +49477,18 @@ table td.text_left {
     font-size: 10px;
   }
 }
+@media all and (max-width: 1024px) {
+  .schedule_type_a tbody td {
+    padding: 1em;
+  }
+}
 @media all and (max-width: 768px) {
   .schedule_type_a thead th {
     font-size: 13px;
   }
   .schedule_type_a tbody td {
     height: 140px;
+    padding: 12px;
   }
 }
 

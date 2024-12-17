@@ -168,8 +168,8 @@
                                           <li><a><i style="background: #111111;"></i>박람회 진행</a></li>            
                                         </ul>
                                       </div>
-                                      <a href="#" class="btn btn-auto btn-more">More</a>
-                                      <div class="schedule_details">
+                                      <a href="#modalDetails" data-toggle="modal" class="btn btn-auto btn-more">More</a>
+                                      <!-- <div class="schedule_details">
                                         <ul>
                                           <li><a><i style="background: #ff0000;"></i>박람회 진행</a></li>
                                           <li><a><i style="background: #ffc700;"></i>박람회 관련 일정 진행
@@ -179,7 +179,7 @@
                                           <li><a><i style="background: #3e42d1;"></i>박람회 진행</a></li>
                                           <li><a><i style="background: #111111;"></i>박람회 진행</a></li>      
                                         </ul>
-                                      </div>
+                                      </div> -->
                                   </td>
                                   <td>
                                     <div class="date-bx">
@@ -198,18 +198,7 @@
                                           일산 킨텍스 12B</a></li>            
                                       </ul>
                                     </div>
-                                    <a href="#" class="btn btn-auto btn-more">More</a>
-                                    <div class="schedule_details">
-                                      <ul>
-                                        <li><a><i></i>박람회 진행</a></li>
-                                        <li><a><i></i>박람회 관련 일정 진행
-                                          일산 킨텍스 12B 박람회 관련 일정 진행
-                                          일산 킨텍스 12B</a></li>
-                                        <li><a><i></i>박람회 진행</a></li>
-                                        <li><a><i></i>박람회 진행</a></li>
-                                        <li><a><i></i>박람회 진행</a></li>      
-                                      </ul>
-                                    </div>
+                                    <a href="#modalDetails" data-toggle="modal" class="btn btn-auto btn-more">More</a>
                                   </td>
                                   <td>
                                       <div class="date-bx">
@@ -316,23 +305,32 @@
 
     <? include "../include/footer.html" ?>
     <? include "../include/js.html" ?>
-    <script>
 
-        $(document).on('click', '.btn-more', function(e){
-          e.preventDefault();
-          var $t = $(this);
+<!-- [D] 12-17 상세 팝업 추가 -->
+<div id="modalDetails" class="modal fade" tabindex="-1" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><span>12</span>/<span>31</span></h5>
+                <button type="button" class="close close-blue" data-dismiss="modal"><i class="xi-close"></i><span class="sr-only">닫기</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="schedule_details">
+                    <ul>
+                        <li><a><i style="background: #ff0000;"></i>박람회 진행</a></li>
+                        <li><a><i style="background: #ffc700;"></i>박람회 관련 일정 진행
+                        일산 킨텍스 12B 박람회 관련 일정 진행
+                        일산 킨텍스 12B</a></li>
+                        <li><a><i style="background: #1cc900;"></i>박람회 진행</a></li>
+                        <li><a><i style="background: #3e42d1;"></i>박람회 진행</a></li>
+                        <li><a><i style="background: #111111;"></i>박람회 진행</a></li>      
+                    </ul>
+                </div>
+            </div>       
+        </div>
+    </div>
+</div>
+<!-- // -->
 
-          if(!$t.hasClass('active')){
-            $('.schedule_type_a').find('.active').removeClass('active');
-            $('.schedule_type_a').find('.schedule_details').hide();
-            $(this).next('.schedule_details').show();
-            $(this).addClass('active');
-          } else {
-            $('.schedule_type_a').find('.active').removeClass('active');
-            $(this).next('.schedule_details').hide();
-            $(this).removeClass('active');
-          }
-        });
-    </script>
   </body>
 </html>

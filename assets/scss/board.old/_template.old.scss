@@ -161,10 +161,14 @@ $input-border-active-width: 3px;
       }
     }
   }
-
   
+  @include mdq-max(lg) {
+    tbody td{
+      padding: 1em;
+    }
+  }
+
   @include mdq-max(md) {
-    
     thead th {
       font-size: 13px;
     }
@@ -172,6 +176,7 @@ $input-border-active-width: 3px;
     tbody {
       td{
         height: 140px;
+        padding: 12px;
       }
     }
   }
