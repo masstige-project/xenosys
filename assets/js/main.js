@@ -213,6 +213,8 @@ $(function () {
       delay: 4000,
       disableOnInteraction: false,
     },
+	loopAdditionalSlides: 3, 
+    speed: 1000, 
     breakpoints: {
       320: {
         slidesPerView: 1.2,
@@ -231,8 +233,10 @@ $(function () {
         spaceBetween: 60,
       },
     },
+	on: {
+      init: function () {
+        console.log("Swiper initialized with loop.");
+      },
+    },
   });
 });
-
-
-
