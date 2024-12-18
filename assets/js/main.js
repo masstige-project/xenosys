@@ -164,24 +164,6 @@ $(function () {
     })
       .setTween("#msContact .link", { opacity: 1, marginTop: "0" })
       .addTo(controller);
-
-    new ScrollMagic.Scene({
-      triggerElement: "#msContactTrigger",
-      triggerHook: 0.8,
-      offset: -vh / 2,
-      duration: vh * 0.8,
-    })
-      .setTween("#msContact", { marginTop: "0" })
-      .addTo(controller);
-
-    new ScrollMagic.Scene({
-      triggerElement: "#msContactTrigger",
-      triggerHook: 0.1,
-      offset: -vh / 2,
-      duration: vh * 0.8,
-    })
-      .setTween("#msContact .inner", { transform: "translateY(0)" })
-      .addTo(controller);
   }
 
   var $cursorBx = $(".cursor-bx");
