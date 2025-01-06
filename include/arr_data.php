@@ -29,8 +29,8 @@ $nav_1_2 = "Introduction";
 $nav_1_3 = "Philosophy";
 
 $nav_2 = "Products";
-$nav_2_1 = "Surgical Telescope(Traditional)";
-$nav_2_2 = "Surgical Telescope(Angle Type)";
+$nav_2_1 = "Surgical Telescopes (Straight Type)";
+$nav_2_2 = "Surgical Telescopes (Angled Type)";
 $nav_2_3 = "Medical Headlight";
 $nav_2_4 = "Medical Camera";
 
