@@ -42088,7 +42088,7 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
 }
 .main-body::-webkit-scrollbar-thumb,
 .sub-body::-webkit-scrollbar-thumb {
-  background: #000;
+  background: #3e42d1;
   border-radius: 7px;
 }
 .main-body::-webkit-scrollbar-track,
@@ -42459,6 +42459,7 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
   transform-origin: center;
   background-size: cover;
   background-position: top center;
+  background-repeat: no-repeat;
   transform: scale(1.1);
   object-fit: cover;
   animation: bg-scale 3s ease-out forwards;
@@ -42561,6 +42562,9 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
   }
 }
 @media all and (max-width: 768px) {
+  .sub-visual .sub-bg .bg {
+    background-position: center left;
+  }
   .sub-visual__wrapper {
     padding: 200px 0 120px;
   }

@@ -17,6 +17,7 @@
       transform-origin: center;
       background-size: cover;
       background-position: top center;
+      background-repeat: no-repeat;
       transform: scale(1.1);
       object-fit: cover;
       animation: bg-scale 3s ease-out forwards;
@@ -127,6 +128,10 @@
   }
 
   @include mdq-max(md) {
+    .sub-bg .bg{
+      background-position: center left;
+    }
+
     &__wrapper {
       padding: 200px 0 120px;
 

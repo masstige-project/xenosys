@@ -50,7 +50,6 @@ $(function () {
       .setClassToggle("#msVisual .prd-render", "on")
       .addTo(controller);
 
-    const html = document.documentElement;
     const img1 = document.querySelector("#prd1 img");
     const img2 = document.querySelector("#prd2 img");
     const frameCount1 = 16;
@@ -77,7 +76,7 @@ $(function () {
         .toString()
         .padStart(2, "0")}.png`;
       if (i === 1) {
-        imgArr2.onload = updateImage;
+        imgArr2.onload = updateImage2;
       }
       images2.push(imgArr2);
     }
@@ -187,7 +186,7 @@ $(function () {
 
 //241209 추가
 $(function () {
-  var productSlide = new Swiper(".main-section.product .swiper-container", {
+  new Swiper(".main-section.product .swiper-container", {
     slidesPerView: 1.2,
     spaceBetween: 20,
     loop: true,
