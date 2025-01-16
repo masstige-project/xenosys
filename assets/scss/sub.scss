@@ -330,8 +330,7 @@
       padding-top: 50px;
     }
 
-    &:before,
-    &:after {
+    &:before {
       content: "";
       position: absolute;
       top: 0;
@@ -339,14 +338,7 @@
       z-index: 1;
       width: 1px;
       height: 100%;
-      background: $gray-d;
-    }
-
-    &:after {
-      height: 0;
       background: $color-1;
-      -webkit-transition: height 1.2s 0.25s ease;
-      transition: height 1.2s 0.25s ease;
     }
 
     .inner {
@@ -386,24 +378,6 @@
 
     .details {
       margin-top: 0.833em;
-    }
-
-    &:nth-child(1).active {
-      &:after {
-        height: 100%;
-      }
-
-      & + .history-item:nth-child(2).active {
-        &:after {
-          height: 100%;
-        }
-
-        & + .history-item:nth-child(3).active {
-          &:after {
-            height: 100%;
-          }
-        }
-      }
     }
   }
 

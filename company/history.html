@@ -29,7 +29,7 @@
           </div>
           <div class="sub-contents history wow fadeInUp"  data-wow-delay="0.2s">
             <ul class="columns history-list">
-              <li class="columns-item history-item motion">
+              <li class="columns-item history-item">
                 <div class="inner">
                   <div class="img" data-aos="fade-up">
                     <img src="../assets/images/sub/history_img_01.png" alt="" />
@@ -44,7 +44,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="columns-item history-item motion">
+              <li class="columns-item history-item">
                 <div class="inner">
                   <div class="img" data-aos="fade-up">
                     <img src="../assets/images/sub/history_img_02.png" alt="" />
@@ -59,7 +59,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="columns-item history-item motion">
+              <li class="columns-item history-item">
                 <div class="inner">
                   <div class="img" data-aos="fade-up">
                     <img src="../assets/images/sub/history_img_03.png" alt="" />
@@ -83,26 +83,5 @@
 
     <? include "../include/footer.html" ?>
     <? include "../include/js.html" ?>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let observer = new IntersectionObserver(isElScrolledIntoView, {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.1,
-        });
-        const elements = document.querySelectorAll(".motion");
-        elements.forEach((element) => {
-          observer.observe(element);
-        });
-
-        function isElScrolledIntoView(entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>
