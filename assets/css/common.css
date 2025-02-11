@@ -43586,29 +43586,29 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
 .popup.popup--lg {
   max-width: 1200px;
 }
-.popup.popup--sm, .popup.popup--privary {
+.popup.popup--sm, .popup.popup--privacy {
   max-width: 600px;
-  border-radius: 30px;
+  border-radius: 20px;
 }
-.popup.popup--sm .text-bx, .popup.popup--privary .text-bx {
-  overflow-y: scroll;
+.popup.popup--sm .text-bx, .popup.popup--privacy .text-bx {
+  overflow-x: hidden;
+  overflow-y: auto;
   max-height: 500px;
-  padding: 0 2.5rem 0 0;
+  padding: 0 1.5rem 0 0;
 }
-.popup.popup--sm .text-bx::-webkit-scrollbar, .popup.popup--privary .text-bx::-webkit-scrollbar {
-  width: 10px;
+.popup.popup--sm .text-bx::-webkit-scrollbar, .popup.popup--privacy .text-bx::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
 }
-.popup.popup--sm .text-bx::-webkit-scrollbar-thumb, .popup.popup--privary .text-bx::-webkit-scrollbar-thumb {
-  width: 10px;
+.popup.popup--sm .text-bx::-webkit-scrollbar-thumb, .popup.popup--privacy .text-bx::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 5px;
   background: #3e42d1;
 }
-.popup.popup--sm .text-bx::-webkit-scrollbar-track, .popup.popup--privary .text-bx::-webkit-scrollbar-track {
-  background: transparent;
-  box-shadow: inset 0 0 5px #3cdcff;
-  border-left: 4.5px solid transparent;
-  border-right: 4.5px solid transparent;
+.popup.popup--sm .text-bx::-webkit-scrollbar-track, .popup.popup--privacy .text-bx::-webkit-scrollbar-track {
+  background: #efefef;
 }
-.popup.popup--sm .popup-title-bx, .popup.popup--privary .popup-title-bx {
+.popup.popup--sm .popup-title-bx, .popup.popup--privacy .popup-title-bx {
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -43616,12 +43616,12 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
   margin-bottom: 1.25rem;
 }
 @media all and (max-width: 768px) {
-  .popup.popup--sm .popup-title-bx, .popup.popup--privary .popup-title-bx {
+  .popup.popup--sm .popup-title-bx, .popup.popup--privacy .popup-title-bx {
     margin-bottom: 1.25rem;
     padding-bottom: 0;
   }
 }
-.popup.popup--sm .popup-title-bx .title, .popup.popup--privary .popup-title-bx .title {
+.popup.popup--sm .popup-title-bx .title, .popup.popup--privacy .popup-title-bx .title {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
@@ -43629,12 +43629,12 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
   margin-bottom: 2.5rem;
 }
 @media all and (max-width: 768px) {
-  .popup.popup--sm .popup-title-bx .title, .popup.popup--privary .popup-title-bx .title {
+  .popup.popup--sm .popup-title-bx .title, .popup.popup--privacy .popup-title-bx .title {
     font-size: 1.25rem;
     margin-bottom: 1.25rem;
   }
 }
-.popup.popup--sm .popup-title-bx .mfp-close, .popup.popup--privary .popup-title-bx .mfp-close {
+.popup.popup--sm .popup-title-bx .mfp-close, .popup.popup--privacy .popup-title-bx .mfp-close {
   width: fit-content;
   height: fit-content;
   line-height: 1;
@@ -43646,7 +43646,7 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
   margin-top: -5px;
 }
 @media all and (max-width: 768px) {
-  .popup.popup--sm .popup-title-bx .mfp-close, .popup.popup--privary .popup-title-bx .mfp-close {
+  .popup.popup--sm .popup-title-bx .mfp-close, .popup.popup--privacy .popup-title-bx .mfp-close {
     font-size: 1.875rem;
   }
 }
@@ -43655,6 +43655,18 @@ body:not(.sitemap-open) .sitemap-btn:hover .line > span:last-child {
 }
 .popup.hide-close .mfp-close {
   display: none !important;
+}
+@media all and (max-width: 768px) {
+  .popup {
+    padding: 1.875rem;
+  }
+  .popup.popup--sm, .popup.popup--privacy {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+  .popup.popup--sm .text-bx, .popup.popup--privacy .text-bx {
+    padding: 0 16px 0 0;
+  }
 }
 
 /* 파일 다운로드 팝업 */
